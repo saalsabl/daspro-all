@@ -8,5 +8,6 @@ public class PemilihanPercobaan101 {
         String hasil;
         hasil = (angka %2 == 0)? "bilangan genap" : "bilangan ganjil";
         System.out.println(angka+ "termasuk" + hasil);
+        
     }
 } 
