@@ -7,18 +7,15 @@ public class LinearSearch01 {
         
         Scanner scan = new Scanner (System.in);
 
-        // Membaca jumlah elemen array dari pengguna
         System.out.print("Masukkan jumlah elemen array: ");
         int n = scan.nextInt();
         int[] arrayInt = new int[n];
 
-        // Membaca elemen-elemen array dari pengguna
         for (int i = 0; i < n; i++) {
             System.out.print("Masukkan elemen array ke-" + i + ": ");
             arrayInt[i] = scan.nextInt();
         }
 
-        // Membaca key yang ingin dicari
         System.out.print("Masukkan key yang ingin dicari: ");
         int key = scan.nextInt();
         int hasil = -1;
