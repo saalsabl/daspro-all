@@ -6,7 +6,6 @@ public class LinearSearch01 {
     public static void main(String[] args) {
         
         Scanner scan = new Scanner (System.in);
-
         System.out.print("Masukkan jumlah elemen array: ");
         int n = scan.nextInt();
         int[] arrayInt = new int[n];
