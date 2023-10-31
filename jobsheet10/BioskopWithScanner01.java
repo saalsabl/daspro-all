@@ -22,18 +22,20 @@ public class BioskopWithScanner01 {
             case 1:
                 System.out.print("Masukkan nama : ");
                 nama = scan.next();
-                System.out.print("Masukkan baris : ");
-                baris = scan.nextInt();
-                System.out.print("Masukkan kolom : ");
-                kolom = scan.nextInt();
-                scan.nextLine();
-                
-                if (baris >= 1 && baris <= 4 && kolom <= 1 && kolom <=2) {
-                    penonton[baris - 1][kolom - 1] = nama;
-                    System.out.println("Data penonton telah dimasukkan.");
-                }else {
-                    System.out.println("Baris atau kolom tidak valid.");
-                }
+                do {
+                    System.out.print("Masukkan baris : ");
+                    baris = scan.nextInt();
+                    System.out.print("Masukkan kolom : ");
+                    kolom = scan.nextInt();
+                    scan.nextLine();
+                    if (isValidSeat(baris, kolom, penonton)){
+                        penonton[baris - 1][kolom - 1] = nama;
+                        System.out.println("Data penonton telah dimasukkan.");
+                        break;
+                    }else {
+                        System.out.println("Kursi telah terisi. Silahkan pilih kursi lain.");
+                    }
+                }while (true);
                 break;
             case 2 :
                 System.out.println("Daftar Penonton : ");
@@ -41,6 +43,8 @@ public class BioskopWithScanner01 {
                     for(int j = 0; j < 2; j++){
                         if (penonton[i][j] != null){
                             System.out.println("Baris " + (i+1) + ", Kolom " + (j+1) + ": " + penonton[i][j]);
+                        }else {
+                            System.out.println("Baris " + (i+1) + ", Kolom" + (j+1) + ": ***");
                         }
                     }
                 }
@@ -54,5 +58,14 @@ public class BioskopWithScanner01 {
                     break;
         }
     }
+    }
+
+    static boolean isValidSeat(int baris, int kolom, String[][] penonton){
+        if (baris >= 1 && baris <= 4 && kolom >= 1 && kolom <=2){
+            if (penonton[baris - 1][kolom - 1] == null){
+                return true;
+            }
+        }
+        return false;
     }
 }
