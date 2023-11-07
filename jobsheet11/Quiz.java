@@ -10,17 +10,24 @@ public class Quiz {
         do{
             int number = random.nextInt(10)+1;
             boolean success = false;
+
             do{
-                System.out.println("tebak angka (1-10): ");
+                System.out.print("tebak angka (1-10) : ");
                 int answer = input.nextInt();
                 input.nextLine();
-                success = (answer == number);
-            }while(!success);
+
+                if (answer < number){
+                    System.out.println("Angka yang anda masukkan lebih kecil dari jawaban.");
+                }else if (answer > number){
+                    System.out.println("Angka yang anda masukkan lebih besar dari jawaban");
+                }else {
+                    System.out.println("Jawaban Anda benar!!");
+                    success = true;
+                }
+            }while (!success);
             System.out.print("Apakah Anda ingin mengulang permainan (Y/y)?");
             menu = input.nextLine().charAt(0);
-        }while (menu=='y' || menu=='Y');
-        {
         
-        }
+        }while (menu == 'y' || menu == 'Y');
     }
 }
