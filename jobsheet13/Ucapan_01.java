@@ -1,16 +1,15 @@
 import java.util.Scanner;
 
 public class Ucapan_01 {
-    public static String PenerimaUcapan(){       
+    public static void PenerimaUcapan(){       
         Scanner sc = new Scanner(System.in);
         System.out.println("Tuliskan NAMA orang yang ingin Anda beri ucapan:");
         String namaOrang = sc.nextLine();
         System.out.println("Ucapan diberikan kepada: " + namaOrang);
         sc.close();
-        return namaOrang;
     }
     public static void main(String[] args) {
-        String nama = PenerimaUcapan();
-        System.out.println("Thank you "+nama+"\nMay the force be with you.");
+        PenerimaUcapan();
+        System.out.println("Thank you, May the force be with you.");
     }
 }
